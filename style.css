@@ -1,0 +1,98 @@
+:root {
+  --encre: #0f172a;
+  --texte: #334155;
+  --doux: #64748b;
+  --fond: #ffffff;
+  --fond-alt: #f8fafc;
+  --bord: #e2e8f0;
+  --accent: #f97316;
+  --accent-fonce: #c2410c;
+  --nuit: #0b1224;
+  --rayon: 14px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--texte);
+  background: var(--fond);
+  line-height: 1.65;
+  font-size: 17px;
+}
+a { color: var(--accent-fonce); }
+h1, h2, h3 { color: var(--encre); line-height: 1.2; margin: 0 0 .6em; }
+h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); letter-spacing: -.02em; }
+h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); letter-spacing: -.01em; }
+h3 { font-size: 1.15rem; }
+p { margin: 0 0 1em; }
+.conteneur { width: min(1120px, 100% - 32px); margin-inline: auto; }
+
+/* En-tête */
+.entete { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--bord); }
+.entete-interieur { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--encre); text-decoration: none; }
+.logo-marque { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--encre); color: #fff; font-size: .85rem; letter-spacing: .04em; }
+.nav { display: flex; align-items: center; gap: 22px; }
+.nav a { color: var(--texte); text-decoration: none; font-size: .95rem; }
+.nav a:hover { color: var(--encre); }
+@media (max-width: 760px) { .nav a:not(.bouton) { display: none; } }
+
+/* Boutons */
+.bouton { display: inline-block; padding: .8em 1.4em; border-radius: 999px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; transition: background .15s; }
+.bouton:hover { background: var(--accent-fonce); }
+.bouton-clair { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.4); }
+.bouton-clair:hover { background: rgba(255,255,255,.1); }
+.nav .bouton { color: #fff; padding: .55em 1.1em; font-size: .9rem; }
+.boutons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+/* Bandeau d'ouverture */
+.hero { background: radial-gradient(1200px 500px at 80% -10%, rgba(249,115,22,.25), transparent 60%), var(--nuit); color: #cbd5e1; padding: clamp(64px, 10vw, 120px) 0; }
+.hero h1 { color: #fff; }
+.surtitre { text-transform: uppercase; letter-spacing: .14em; font-size: .8rem; font-weight: 700; color: var(--accent); margin-bottom: 14px; }
+.chapo { font-size: clamp(1.15rem, 2.2vw, 1.35rem); color: #e2e8f0; max-width: 46ch; }
+.hero p:not(.chapo):not(.surtitre) { max-width: 60ch; }
+
+/* Chiffres */
+.chiffres { border-bottom: 1px solid var(--bord); }
+.chiffres .conteneur { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 36px 0; text-align: center; }
+.chiffre strong { display: block; font-size: 2.2rem; color: var(--encre); }
+.chiffre span { color: var(--doux); font-size: .95rem; }
+@media (max-width: 560px) { .chiffres .conteneur { grid-template-columns: 1fr; } }
+
+/* Sections */
+section { padding: clamp(56px, 8vw, 96px) 0; }
+.section-alt { background: var(--fond-alt); }
+.intro-section { max-width: 62ch; margin-bottom: 40px; }
+.intro-section p { color: var(--doux); }
+.grille { display: grid; gap: 20px; }
+.grille-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grille-2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 700px) { .grille-2 { grid-template-columns: 1fr; } }
+.carte { background: #fff; border: 1px solid var(--bord); border-radius: var(--rayon); padding: 28px; }
+.carte p { margin: 0; }
+.pastille { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: rgba(249,115,22,.12); color: var(--accent-fonce); font-weight: 700; margin-bottom: 16px; }
+.etape-numero { font-weight: 700; color: var(--accent); font-size: .9rem; letter-spacing: .08em; display: block; margin-bottom: 8px; }
+
+/* Partenariat */
+.bandeau { background: var(--encre); color: #cbd5e1; border-radius: 22px; padding: clamp(32px, 5vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.bandeau h2 { color: #fff; margin-bottom: .3em; }
+.bandeau p { margin: 0; max-width: 52ch; }
+
+/* Contact */
+.contact-grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.contact-grille .carte h3 { font-size: 1rem; color: var(--doux); font-weight: 600; margin-bottom: .4em; }
+.contact-grille .carte p { color: var(--encre); font-weight: 600; }
+
+/* Pied de page */
+.pied { background: var(--nuit); color: #94a3b8; padding: 40px 0; font-size: .92rem; }
+.pied .conteneur { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+.pied a { color: #cbd5e1; text-decoration: none; margin-right: 18px; }
+.pied a:hover { color: #fff; }
+
+/* Pages légales */
+.page-legale { padding: 56px 0 80px; }
+.page-legale .conteneur { max-width: 780px; }
+.page-legale h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); }
+.page-legale h2 { font-size: 1.25rem; margin-top: 2em; }
+.page-legale .mise-a-jour { color: var(--doux); font-size: .92rem; }
